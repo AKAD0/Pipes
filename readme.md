@@ -76,7 +76,7 @@ To perform clustering I tested several clustering method with the Slihouette Sco
 Agglo proved to be the best according to 'silhouette_score'.\
 The most typical samples of each cluster is illustrated below.
 <p align="center">
-  <img src="https://github.com/AKAD0/Pipes/blob/master/clustering.png">
+  <img src="https://github.com/AKAD0/Pipes/blob/master/Clustering.png">
 </p>
 
 $$

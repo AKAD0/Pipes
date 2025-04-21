@@ -5,7 +5,7 @@
     * 3.1. EDA + Feature Engineering
     * 3.2. Training Classifier
     * 3.3. Cost Clustering
-4. Code
+4. Clustering
 5. Results
 
 # 1. Describtion

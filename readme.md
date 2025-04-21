@@ -20,7 +20,13 @@ We had several measurements (MFL) of the pipe defects. Each measurement has 3 ch
 # 3. Solution
 Solution is comprised of 3 parts: EDA + feature Engineering, Training classifier, Clustering. Describtion of every part is provided below.
 ## 3.1. EDA + feature Engineering
+<p align="center">
+  <img src="https://github.com/AKAD0/Pipes/blob/master/EDA.png">
+</p>
 
+$$
+\text{Fig.1: Some samples from raw dataset}
+$$
 
 ## 3.2. Model
 ### > FNN architecture:

@@ -1,41 +1,27 @@
 # Contents:
 1. Describtion
 2. Problem
-3. Method
-    * 3.1. Dataset
-    * 3.2. Model
-    * 3.3. Cost function
-    * 3.4. Optimization procedure
-    * 3.5. Initializing data
+3. Solution
+    * 3.1. EDA + Feature Engineering
+    * 3.2. Training Classifier
+    * 3.3. Cost Clustering
 4. Code
 5. Results
 
 # 1. Describtion
-We had several measurements (MFL) of the pipe defects. Each measurement has 3 channels. Each measurement (defect) belongs to one of two defect location ( internal and external , or ID and OD). Also, each defect belongs to different sub-type (i.e, corrosion, dent, gouge, etc.).\
-You should:
-1. Perform EDA. Draw conclusions.
-2. On the basis of provided data, train classifier that will predict defect location for unlabeled data. Scoring - F1. Goal is to get F1 >0.8
-3. Perform unsupervised clustering. Identify optimal number of clusters. Draw most typical representative of each identified class.
-
-This project presents the mathematical apparatus of the FNN architecture to solve XOR problem and the implementing python code.
-
-IMPORTANT: This project doesn't include the optimization procedure. To see how the optimization by Stochastic Gradient Descent works, check my another project by following link: https://github.com/AKAD0/FNN.SGD_MNIST.git
+A task I've been working on during Schlumberger internship.
 
 # 2. Problem
-XOR function via FNN architechture with no use of frameworks.
+We had several measurements (MFL) of the pipe defects. Each measurement has 3 channels. Each measurement (defect) belongs to one of two defect location ( internal and external , or ID and OD). Also, each defect belongs to different sub-type (i.e, corrosion, dent, gouge, etc.). You should:
+1. Perform EDA. Draw conclusions.
+2. On the basis of provided data, train classifier that will predict defect location for unlabeled data. Scoring - F1. Goal is to get F1 >0.8
+3. Perform unsupervised clustering. Identify optimal number of clusters. Draw most typical representative of each identified class. 
 
-# 3. Method
-Algorithm structure is comprised of 5 parts: Dataset, Model, Cost function, Optimization procedure and Initializing data. Describtion of every part is provided below.
-## 3.1. Dataset
-$$
-𝕏=\lbrace{[0,0]^T, [0,1]^T, [1,0]^T, [1,1]^T\rbrace},~
-f^*=\begin{bmatrix}
-    0 \\
-    1 \\
-    1 \\
-    0 \\
-    \end{bmatrix}
-$$
+# 3. Solution
+Solution is comprised of 3 parts: EDA + feature Engineering, Training classifier, Clustering. Describtion of every part is provided below.
+## 3.1. EDA + feature Engineering
+
+
 ## 3.2. Model
 ### > FNN architecture:
 <p align="center">

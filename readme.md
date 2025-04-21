@@ -63,16 +63,31 @@ $$
 $$
 
 
-# 4. Code
+# 4. Clustering
+To perform clustering I tested several clustering method with the Slihouette Score metric. The results are as followed:
+1. KMeans -> 0.48564825262851474
+2. DBSCAN -> 0.006025347067753193
+3. Meanshift -> 0.44624935603412746
+4. Spectral -> 0.43705262995384286
+5. Gaussian -> 0.4781120330958871
+6. Optics -> 0.4570925964553953
+7. Agglo -> 0.512642011132095
+
+Agglo proved to be the best according to 'silhouette_score'.\
+The most typical samples of each cluster is illustrated below.
 <p align="center">
-  <img src="https://github.com/AKAD0/FNN_XOR/blob/master/Block.png">
+  <img src="https://github.com/AKAD0/FNN_XOR/blob/master/clustering.png">
 </p>
 
 $$
-\text{Fig.2: Block scheme of the algorithm}
+\text{Fig.2: The most typical samples of each cluster}
 $$
 
-The listing of the program is provided in the '/FNN_XOR.ipynb' file.
+The listing of the program is provided in the '/Solution.ipynb' file.
 
 # 5. Results
-MSE metric evaluated as '0.0' and simple human check of outputted results show that the algorithm solves the problem.
+The following tasks have been performed:
+
+1. EDA with associated Feature Engineering. New dataset was built.
+2. Train of a LinearSVC. F1=0.94.
+3. Clustering. 2 clusters were defined, 2 related typical samples were provided.

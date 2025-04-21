@@ -29,105 +29,39 @@ $$
 \text{Fig.1: Some samples from raw dataset}
 $$
 
-## 3.2. Model
-### > FNN architecture:
+To solve the problem there should be generated new statistical, frequency and peak features for each channel to work with and to pass to a model.
+Generated features are:
+1. Statistical: mean, std_dev, min, max, range, skewness, kurtosis;
+2. Fourier: mean, std_d, max, peak_freq;
+3. Extremums: num_peaks, num_valleys, max_peak_height, max_peak_height, min_valley_depth, min_valley_depth.
 <p align="center">
-  <img src="https://github.com/AKAD0/FNN_XOR/blob/master/Fig1.png">
+  <img src="https://github.com/AKAD0/Pipes/blob/master/table1.png">
 </p>
 
 $$
-\text{Fig.1: Topology of the architecture}
-$$
-### > Output layer:
-$$
-y=f^{(2)}(h; w,b) = w^Th+b
+\text{Fig.2: A slice of new dataset}
 $$
 
-$$
-\\
-\begin{aligned}
-\text{where}~
-&w-\text{weights vector of}~f^{(2)} \\
-&b-\text{biases vector of}~f^{(2)} \\
-&h-\text{output vector of}~f^{(1)} \\
-\end{aligned}
-$$
-
-The function $f^{(2)}$ is linear because $h=f^{(1)}$ returns data solvable for linear functions. 
-
-### > Hidden layer:
-$$
-h = f^{(1)} = g( z( x; W,c))
-$$
+## 3.2. Training Classifier
+The model of choice is LinearSVC since Logreg model isn't as capable to bend a hyperplane under such a number of features.\
+<p align="center">
+  <img src="https://github.com/AKAD0/Pipes/blob/master/model1.png">
+</p>
 
 $$
-\\
-\begin{aligned}
-\text{where}~
-&x-\text{input vector} \\
-&W-\text{weights vector of}~f^{(1)} \\
-&c-\text{biases vector of}~f^{(1)} \\
-&z(x; W,c)=x^TW+c-\text{input function} \\
-&g(z_i)=max\lbrace0, z_{:,i}\rbrace-\text{activation function ReLU}
-\end{aligned}
+\text{Fig.2: Resulting model performance}
 $$
 
-The input function $z$ is a default affine transformation allowing learning algorithm to manipulate data to find representation that reduces error. \
-Activation function is applied to every element in the vector.
+Trained model was inferenced to predict unlabeled data:
 
-### > Input layer:
-$$
-X \in ℕ^{4×2}
-$$
-
-Every row represents a sample of two numbers to pass to XOR function.
-
-### > Composition
-$$
-f(x; W,c,w,b) = f^{(2)}( f^{(1)}( x)) = w^Tmax\lbrace0, W^Tx+c\rbrace+b
-$$
-### > Cost Function
-$$
-J(θ) = \frac{1}{4}\sum_{x\in𝕏^4}( f^{*}(x) - f(x;θ))^2
-$$
+<p align="center">
+  <img src="https://github.com/AKAD0/Pipes/blob/master/table2.png">
+</p>
 
 $$
-\\
-\begin{aligned}
-\text{where}~
-&θ-\text{optimizing parameters W,c,w,b} \\
-&x-\text{input data} \\
-&f^{*}-\text{true function} \\
-&f-\text{approximating function}
-\end{aligned}
-$$
-### > Optimization procedure
-$$
-\text{N/A}
+\text{Fig.2: A slice of predicted values}
 $$
 
-For this particular example optimal parameters are already known and provided as initializing data.\
-In general, the stochastic gradient descent is usually used to find these parameters and produces acceptable results.
-
-### > Initializing data
-$$
-W = \begin{bmatrix}
-    1 & 1 \\
-    1 & 1 \\
-    \end{bmatrix}
-,~
-c = \begin{bmatrix}
-    0 \\
-    -1 \\
-    \end{bmatrix}
-,~
-w = \begin{bmatrix}
-    1 \\
-    -2 \\
-    \end{bmatrix}
-,~
-b=0
-$$
 
 # 4. Code
 <p align="center">

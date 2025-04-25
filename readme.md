@@ -83,9 +83,9 @@ $$
 \text{Fig.2: The most typical samples of each cluster}
 $$
 
-The listing of the program is provided in the '/Solution.ipynb' file.
-
 # 5. Results
+Complete python notebook is in the file './Solution.ipynb'
+
 The following tasks have been performed:
 
 1. EDA with associated Feature Engineering. New dataset was built.
